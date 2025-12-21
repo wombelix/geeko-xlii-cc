@@ -8,3 +8,4 @@ roles/*/*
 collections/*/*
 *.pyc
 __pycache__/
+.ansible/

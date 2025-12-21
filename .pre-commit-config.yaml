@@ -15,16 +15,16 @@ repos:
   - id: check-added-large-files
   - id: check-case-conflict
   repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.6.0
+  rev: v6.0.0
 - hooks:
   - id: commitizen
   repo: https://github.com/commitizen-tools/commitizen
-  rev: v3.25.0
+  rev: v4.10.0
 - hooks:
   - id: ansible-lint
   repo: https://github.com/ansible-community/ansible-lint
-  rev: v24.2.3
+  rev: v25.12.1
 -   repo: https://github.com/fsfe/reuse-tool
-    rev: v4.0.3
+    rev: v6.2.0
     hooks:
     -   id: reuse
