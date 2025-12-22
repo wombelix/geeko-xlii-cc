@@ -8,13 +8,4 @@
   become: false
   gather_facts: false
   no_log: true
-
-- name: Import DNS playbook
-  import_playbook: dns.yml
-
-- name: Import K3sup playbook
-  import_playbook: k3sup.yml
-
-- name: Import Rancher playbook
-  import_playbook: k3sup.yml
 ...

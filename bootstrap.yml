@@ -40,7 +40,7 @@
         mode: '440'
         validate: visudo -csf %s
 
-    - name: upgrade installed packages
+    - name: Upgrade installed packages
       community.general.zypper:
         name: '*'
         update_cache: true
