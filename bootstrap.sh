@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-ansible-playbook -i 5.104.107.120, bootstrap.yml "$@" 
+ansible-playbook -i geeko.xlii.cc, -u root "$@" bootstrap.yml

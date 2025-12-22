@@ -9,20 +9,11 @@
   remote_user: root
 
   tasks:
-    - name: Install packages
-      ansible.builtin.apt:
-        autoclean: true
-        autoremove: true
-        name:
-          - sudo
-          - python-is-python3
-        state: present
-
     - name: Create user
       ansible.builtin.user:
-        comment: ansible
+        comment: automation user
         create_home: true
-        name: marvin
+        name: ansible42
         password_lock: true
         password: '*' # disable user on Linux and FreeBSD, allows SSH key based auth
         remove: true # This only affects state=absent
@@ -32,20 +23,26 @@
     - name: Upload SSH public key
       ansible.posix.authorized_key:
         exclusive: true
-        user: marvin
+        user: ansible42
         key: |
-           {{ lookup('file', 'files/marvin_id_rsa.pub') }}
+           {{ lookup('file', 'files/ansible42_id_rsa.pub') }}
            {{ lookup('file', 'files/wombelix_id_rsa.pub') }}
         manage_dir: true
-        path: /home/marvin/.ssh/authorized_keys
+        path: /home/ansible42/.ssh/authorized_keys
         state: present
 
     - name: Grant sudo permissions
       ansible.builtin.copy:
-        content: "marvin ALL=(ALL) NOPASSWD: ALL"
-        dest: "/etc/sudoers.d/marvin"
+        content: "ansible42 ALL=(ALL) NOPASSWD: ALL"
+        dest: "/etc/sudoers.d/ansible42"
         owner: root
         group: root
         mode: '440'
         validate: visudo -csf %s
+
+    - name: upgrade installed packages
+      community.general.zypper:
+        name: '*'
+        update_cache: true
+        state: dist-upgrade
 ...

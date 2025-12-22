@@ -4,7 +4,7 @@
 
 all:
   hosts:
-    earth.xlii.cc:
+    geeko.xlii.cc:
       ansible_port: 22
-      ansible_host: earth.xlii.cc
-      ansible_user: marvin
+      ansible_host: geeko.xlii.cc
+      ansible_user: ansible42
