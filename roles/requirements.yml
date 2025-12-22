@@ -3,8 +3,4 @@
 # SPDX-License-Identifier: MIT
 
 roles:
-  - name: vandot.k3sup
-    src: https://github.com/vandot/ansible-role-k3sup.git
-    scm: git
-    version: master
   - name: geerlingguy.helm

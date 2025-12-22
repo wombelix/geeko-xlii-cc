@@ -4,6 +4,3 @@
 
 ansible
 ansible-lint
-requests
-pyyaml
-kubernetes
