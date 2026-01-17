@@ -19,6 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint@v26.1.1
+
       - name: Setup
         run: |
           python3 -m venv venv
@@ -35,8 +38,3 @@ jobs:
           # Only trust known geeko.xlii.cc SSH fingerprints
           mkdir -p ~/.ssh
           cp files/ssh_fingerprints_geeko_xlii_cc.txt ~/.ssh/known_hosts
-
-      - name: Lint
-        run: |
-          source venv/bin/activate
-          ansible-lint
