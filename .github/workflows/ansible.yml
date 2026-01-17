@@ -33,7 +33,10 @@ jobs:
           ansible-galaxy role install -v -r roles/requirements.yml
 
           # Only trust known geeko.xlii.cc SSH fingerprints
+          mkdir -p ~/.ssh
           cp files/ssh_fingerprints_geeko_xlii_cc.txt ~/.ssh/known_hosts
 
-  ansible-lint:
-    uses: ansible/ansible-content-actions/.github/workflows/ansible_lint.yaml@main
+      - name: Lint
+        run: |
+          source venv/bin/activate
+          ansible-lint
