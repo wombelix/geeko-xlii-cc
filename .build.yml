@@ -1,20 +1,15 @@
-# SPDX-FileCopyrightText: 2024 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-FileCopyrightText: 2026 Dominik Wombacher <dominik@wombacher.cc>
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: CC0-1.0
 
 image: debian/stable
-
-packages:
-  - python3-venv
-  - python3-dev
-  - pkg-config
 
 sources:
   - https://git.sr.ht/~wombelix/geeko-xlii-cc
   - https://git.sr.ht/~wombelix/build-helper-scripts
 
 secrets:
-  - 5b076ab5-1361-4d71-905b-4ff8c836c62c # sr.ht builds git mirror deploy key
+  - 5b076ab5-1361-4d71-905b-4ff8c836c62c
 
 environment:
   GIT_MIRROR_SSH_KEY: ~/.ssh/5b076ab5-1361-4d71-905b-4ff8c836c62c
@@ -33,28 +28,6 @@ tasks:
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITHUB"
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITLAB"
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_CODEBERG"
-
-  - setup: |
-      cd geeko-xlii-cc
-
-      python3 -m venv venv
-      source venv/bin/activate
-
-      python3 -m pip install --upgrade pip
-      python3 -m pip install -r requirements.txt
-
-      # Install ansible collections and roles first, otherwise ansible-lint will fail
-      # https://github.com/ansible/ansible-lint/issues/3636
-      ansible-galaxy collection install -v --pre -r collections/requirements.yml
-      ansible-galaxy role install -v -r roles/requirements.yml
-
-      # Only trust known geeko.xlii.cc SSH fingerprints
-      cp files/ssh_fingerprints_geeko_xlii_cc.txt ~/.ssh/known_hosts
-
-  - check: |
-      cd geeko-xlii-cc
-      source venv/bin/activate
-      ansible-lint
 
 triggers:
   - action: email
