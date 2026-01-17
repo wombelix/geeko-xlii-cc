@@ -35,5 +35,5 @@ jobs:
           # Only trust known geeko.xlii.cc SSH fingerprints
           cp files/ssh_fingerprints_geeko_xlii_cc.txt ~/.ssh/known_hosts
 
-      - name: Ansible Lint
-        uses: ansible/ansible-content-actions/.github/workflows/ansible_lint.yaml@main
+  ansible-lint:
+    uses: ansible/ansible-content-actions/.github/workflows/ansible_lint.yaml@main
