@@ -7,8 +7,6 @@ name: Ansible
 on:
   push:
     branches: [main]
-    paths:
-      - 'ansible/**'
   workflow_dispatch:
 
 permissions:
