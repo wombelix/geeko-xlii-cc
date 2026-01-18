@@ -8,4 +8,7 @@
   become: false
   gather_facts: false
   no_log: true
+  tasks:
+    - name: Validate SSH connection
+      ansible.builtin.ping:
 ...

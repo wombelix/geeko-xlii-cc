@@ -68,3 +68,8 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}
+
+      - name: Run Ansible Playbook
+        run: |
+          source venv/bin/activate
+          ansible-playbook site.yml
