@@ -25,8 +25,8 @@
         exclusive: true
         user: ansible42
         key: |
-           {{ lookup('file', 'files/ansible42_id_rsa.pub') }}
-           {{ lookup('file', 'files/wombelix_id_rsa.pub') }}
+           {{ lookup('file', 'files/ansible42.pub') }}
+           {{ lookup('file', 'files/wombelix.pub') }}
         manage_dir: true
         path: /home/ansible42/.ssh/authorized_keys
         state: present
