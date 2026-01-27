@@ -4,7 +4,7 @@
 
 all:
   hosts:
-    geeko.xlii.cc:
+    k3s.xlii.cc:
       ansible_port: 22
-      ansible_host: geeko.xlii.cc
+      ansible_host: k3s.xlii.cc
       ansible_user: ansible42

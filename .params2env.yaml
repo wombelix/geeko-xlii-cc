@@ -8,7 +8,7 @@ kms: alias/backend-encryption
 upper: true
 format: github-env
 params:
-  - name: /projects/geeko-xlii-cc/ssh-private-key-openssh
+  - name: /projects/k3s-xlii-cc/ssh-private-key-openssh
     env: SSH_PRIVATE_KEY
-  - name: /projects/geeko-xlii-cc/ssh-public-key-openssh
+  - name: /projects/k3s-xlii-cc/ssh-public-key-openssh
     env: SSH_PUBLIC_KEY

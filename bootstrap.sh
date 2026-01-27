@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-ansible-playbook -i geeko.xlii.cc, -u root "$@" bootstrap.yml
+ansible-playbook -i k3s.xlii.cc, -u root "$@" bootstrap.yml

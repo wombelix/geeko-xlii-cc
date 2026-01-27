@@ -16,7 +16,7 @@ permissions:
 env:
   AWS_REGION: eu-central-1
   AWS_ACCOUNT_ID: '992382418145'
-  AWS_ROLE_NAME: GitHubOIDC-geeko-xlii-cc-ResourceAccess
+  AWS_ROLE_NAME: GitHubOIDC-k3s-xlii-cc-ResourceAccess
 
 jobs:
   lint:
@@ -51,9 +51,9 @@ jobs:
           ansible-galaxy collection install -v --pre -r collections/requirements.yml
           ansible-galaxy role install -v -r roles/requirements.yml
 
-          # Only trust known geeko.xlii.cc SSH fingerprints
+          # Only trust known k3s.xlii.cc SSH fingerprints
           mkdir -p ~/.ssh
-          cp files/ssh_fingerprints_geeko_xlii_cc.txt ~/.ssh/known_hosts
+          cp files/ssh_fingerprints_k3s_xlii_cc.txt ~/.ssh/known_hosts
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4

@@ -4,12 +4,12 @@ SPDX-FileCopyrightText: 2026 Dominik Wombacher <dominik@wombacher.cc>
 SPDX-License-Identifier: Apache-2.0
 -->
 
-# Server config: geeko.xlii.cc
+# Server config: k3s.xlii.cc
 
-Scripts and playbooks related to the configuration and maintenance of geeko.xlii.cc
+Scripts and playbooks related to the configuration and maintenance of k3s.xlii.cc
 
-[![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/geeko-xlii-cc)](https://api.reuse.software/info/git.sr.ht/~wombelix/geeko-xlii-cc)
-[![builds.sr.ht status](https://builds.sr.ht/~wombelix/geeko-xlii-cc.svg)](https://builds.sr.ht/~wombelix/geeko-xlii-cc?)
+[![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/k3s-xlii-cc)](https://api.reuse.software/info/git.sr.ht/~wombelix/k3s-xlii-cc)
+[![builds.sr.ht status](https://builds.sr.ht/~wombelix/k3s-xlii-cc.svg)](https://builds.sr.ht/~wombelix/k3s-xlii-cc?)
 
 ## Table of Contents
 
@@ -20,13 +20,13 @@ Scripts and playbooks related to the configuration and maintenance of geeko.xlii
 ## Source
 
 The primary location is:
-[git.sr.ht/~wombelix/geeko-xlii-cc](https://git.sr.ht/~wombelix/geeko-xlii-cc)
+[git.sr.ht/~wombelix/k3s-xlii-cc](https://git.sr.ht/~wombelix/k3s-xlii-cc)
 
 Mirrors are available on
-[Codeberg](https://codeberg.org/wombelix/geeko-xlii-cc),
-[Gitlab](https://gitlab.com/wombelix/geeko-xlii-cc)
+[Codeberg](https://codeberg.org/wombelix/k3s-xlii-cc),
+[Gitlab](https://gitlab.com/wombelix/k3s-xlii-cc)
 and
-[GitHub](https://github.com/wombelix/geeko-xlii-cc).
+[GitHub](https://github.com/wombelix/k3s-xlii-cc).
 
 ## Contribute
 
