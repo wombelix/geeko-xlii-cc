@@ -4,9 +4,9 @@
 
 ---
 - name: OS and SSH Hardening
-  hosts: all
-  become: true
-  gather_facts: true
+  hosts: all, !localhost
+  gather_facts: false
+  remote_user: root
 
   roles:
     - devsec.hardening.os_hardening

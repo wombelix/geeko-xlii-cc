@@ -40,9 +40,14 @@
         mode: '440'
         validate: visudo -csf %s
 
-    - name: Upgrade installed packages
-      community.general.zypper:
-        name: '*'
+    - name: Upgrade installed packages # noqa: package-latest
+      ansible.builtin.apt:
+        name: "*"
+        autoclean: true
+        autoremove: true
         update_cache: true
-        state: dist-upgrade
+        state: latest
+
+- name: OS and SSH Hardening
+  import_playbook: hardening.yml
 ...

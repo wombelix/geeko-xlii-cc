@@ -8,6 +8,4 @@
   become: false
   gather_facts: false
 
-- name: OS and SSH Hardening
-  import_playbook: hardening.yml
 ...
